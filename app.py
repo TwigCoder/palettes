@@ -308,4 +308,7 @@ with tab2:
         if st.button(f"Load {name}", key=f"load_{name}"):
             st.session_state.colors = palette_data["colors"]
             st.rerun()
-        display_color_graphs(palette_data["colors"])
+        try:
+            display_color_graphs(palette_data["colors"])
+        except:
+            pass
