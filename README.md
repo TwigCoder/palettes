@@ -1,4 +1,4 @@
-Welcome to Palettes! Check it out [here](will link once deployed).
+Welcome to Palettes! Check it out [here](https://palettes.streamlit.app).
 
 Choose the number of colors you wish to generate and one of the eight color scheme mods! CHeck out their names and even save the pallete for later.
 

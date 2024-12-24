@@ -8,10 +8,21 @@ import pandas as pd
 import streamlit_drawable_canvas
 import plotly.express as px
 import plotly.graph_objects as go
+import sys
 from colorsys import rgb_to_hsv, rgb_to_hls
 
 st.set_page_config(layout="wide")
 st.set_option("client.showErrorDetails", False)
+
+
+def set_global_exception_handler(f):
+    script_runner = sys.modules["streamlit.runtime.scriptrunner.script_runner"]
+    script_runner.handle_uncaught_app_exception.__code__ = f.__code__
+
+
+def exception_handler(e):
+    st.error(f"An error occured.")
+
 
 if "saved_palettes" not in st.session_state:
     st.session_state.saved_palettes = {}
